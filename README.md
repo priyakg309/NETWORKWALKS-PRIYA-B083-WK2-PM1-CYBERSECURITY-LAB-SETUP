@@ -68,12 +68,12 @@ The table below lists each tool used in this report and its purpose.
 |  # | Tool / Operating System  | Purpose / Function                                                                                                   |
 | -: | ------------------------ | -------------------------------------------------------------------------------------------------------------------- |
 |  1 | **Kali Linux & Windows** | Operating systems used for reconnaissance activities                                                                 |
-|  2 | **WHOIS**                | Identifies domain registration details, including owner information, registration/expiration dates, and name servers |
-|  3 | **WhatWeb**              | Fingerprints web technologies in use, such as server type, CMS, plugins, and IP address                              |
+|  2 | **whois**                | Identifies domain registration details, including owner information, registration/expiration dates, and name servers |
+|  3 | **whatweb**              | Fingerprints web technologies in use, such as server type, CMS, plugins, and IP address                              |
 |  4 | **nslookup**             | Resolves the target domain name to its corresponding IP address via DNS                                              |
 |  5 | **curl -I**              | Retrieves and displays the HTTP response headers of the target website                                               |
-|  6 | **Wafw00f**              | Detects the presence of a Web Application Firewall (WAF) protecting the site                                         |
-|  7 | **DNSRecon**             | Enumerates DNS records, including NS, MX, SPF, and TXT entries                                                       |
+|  6 | **wafw00f**              | Detects the presence of a Web Application Firewall (WAF) protecting the site                                         |
+|  7 | **dnsrecon - d**         | Enumerates DNS records, including NS, MX, SPF, and TXT entries                                                       |
 |  8 | **Zenmap (Nmap GUI)**    | Scans the local subnet to identify live hosts, their IP addresses, and MAC addresses                                 |
 |  9 | **Windows CMD**          | Used for local IP address and MAC address identification                                                             |
 
@@ -82,19 +82,19 @@ The table below lists each tool used in this report and its purpose.
 
 ## 4.1 Footprinting & Reconnaissance
 
-As part of the reconnaissance phase, I conducted an authorized footprinting assessment of the **networkwalks.com** domain using six Kali Linux tools: **WHOIS, WhatWeb, Nslookup, cURL, Wafw00f, and DNSRecon**. Each tool was selected to collect a specific category of publicly accessible information and to build a broader understanding of the target’s domain, web technologies, DNS configuration, and security infrastructure.
+As part of the reconnaissance phase, I conducted an authorized footprinting assessment of the **networkwalks.com** domain using six Kali Linux tools: **whois, whatweb, nslookup, curl -I, wafw00f, and dnsrecon**. Each tool was selected to collect a specific category of publicly accessible information and to build a broader understanding of the target’s domain, web technologies, DNS configuration, and security infrastructure.
 
-**i)** First, I used **WHOIS** to gather publicly available domain-registration information and identify the domain’s associated name servers. The results provided useful information regarding the domain registration and elements of its hosting and DNS infrastructure.
+**i)** First, I used **whois** to gather publicly available domain-registration information and identify the domain’s associated name servers. The results provided useful information regarding the domain registration and elements of its hosting and DNS infrastructure.
 
 <img width="955" height="895" alt="W2-PM1-Task1 my result whois" src="https://github.com/user-attachments/assets/fba02fce-cf48-41ef-bb63-b76afcf9a49d" />
 
 
-**ii)** I then used **WhatWeb** to identify the technologies and components exposed by the target website. The results identified **WordPress 7.1** and **WP Download Manager 3.3.58**, along with additional technology-related information revealed by the website. Such information can help a security professional understand the target’s technology stack and identify areas that may require further security assessment.
+**ii)** I then used **whatweb** to identify the technologies and components exposed by the target website. The results identified **WordPress 7.1** and **WP Download Manager 3.3.58**, along with additional technology-related information revealed by the website. Such information can help a security professional understand the target’s technology stack and identify areas that may require further security assessment.
 
 <img width="936" height="299" alt="W2-PM1-Task2 my result whatweb" src="https://github.com/user-attachments/assets/3d8d3d9a-0e34-4022-95ea-b5b0d3cdeb95" />
 
 
-**iii)** Using **Nslookup**, I performed DNS resolution for the target domain to determine its associated IP address. The observed result resolved **networkwalks.com** to **192.232.216.135**. This information provides an important reference point for understanding the target’s publicly accessible network infrastructure.
+**iii)** Using **nslookup**, I performed DNS resolution for the target domain to determine its associated IP address. The observed result resolved **networkwalks.com** to **192.232.216.135**. This information provides an important reference point for understanding the target’s publicly accessible network infrastructure.
 
 <img width="954" height="159" alt="W2-PM1-Task3-my result nslookup" src="https://github.com/user-attachments/assets/e8e6d0fa-668c-4362-9480-3e4a4bf468d0" />
 
@@ -106,7 +106,7 @@ As part of the reconnaissance phase, I conducted an authorized footprinting asse
 
 <img width="713" height="331" alt="W2-PM1-Task5-my result wafw00f" src="https://github.com/user-attachments/assets/2472d9a3-9eb0-4161-b80c-4ff533cda94f" />
 
-**vi)** Finally, I used **DNSRecon** to perform DNS enumeration and collect additional publicly accessible DNS information. The results included details related to **name servers, mail servers, SPF/TXT records, service records, and DNS software information**. This information contributes to a more complete understanding of the target’s DNS architecture and externally visible infrastructure.
+**vi)** Finally, I used **dnsrecon** to perform DNS enumeration and collect additional publicly accessible DNS information. The results included details related to **name servers, mail servers, SPF/TXT records, service records, and DNS software information**. This information contributes to a more complete understanding of the target’s DNS architecture and externally visible infrastructure.
 
 <img width="1022" height="515" alt="W2-PM1-Task6-my result dnsrecon -d" src="https://github.com/user-attachments/assets/4f008024-be3d-4cd6-bd65-b18933820010" />
 
