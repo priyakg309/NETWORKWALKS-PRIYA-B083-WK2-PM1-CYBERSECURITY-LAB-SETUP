@@ -27,7 +27,7 @@
 ## 👤 Penetration Testing Engagement Information
 | Category                 | Details                                                  |
 | ------------------------ | -------------------------------------------------------- |
-| 👤 **Project Name**      | Penetration Testing Report                               |
+| **Project Name**         | Penetration Testing Report                               |
 | **Pentester Name**       | Priya Kishore Gehani                                     |
 | **Role**                 | Cybersecurity Student / Junior Penetration Tester        |
 | **Program / Batch**      | B083 – Networkwalks                                      |
