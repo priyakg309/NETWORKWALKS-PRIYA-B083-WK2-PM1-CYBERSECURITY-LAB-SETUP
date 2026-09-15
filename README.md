@@ -86,17 +86,35 @@ As part of the reconnaissance phase, I conducted an authorized footprinting asse
 
 First, I used **WHOIS** to gather publicly available domain-registration information and identify the domain’s associated name servers. The results provided useful information regarding the domain registration and elements of its hosting and DNS infrastructure.
 
+<img width="955" height="895" alt="W2-PM1-Task1 my result whois" src="https://github.com/user-attachments/assets/fba02fce-cf48-41ef-bb63-b76afcf9a49d" />
+
+
 I then used **WhatWeb** to identify the technologies and components exposed by the target website. The results identified **WordPress 7.1** and **WP Download Manager 3.3.58**, along with additional technology-related information revealed by the website. Such information can help a security professional understand the target’s technology stack and identify areas that may require further security assessment.
+
+<img width="936" height="299" alt="W2-PM1-Task2 my result whatweb" src="https://github.com/user-attachments/assets/3d8d3d9a-0e34-4022-95ea-b5b0d3cdeb95" />
+
 
 Using **Nslookup**, I performed DNS resolution for the target domain to determine its associated IP address. The observed result resolved **networkwalks.com** to **192.232.216.135**. This information provides an important reference point for understanding the target’s publicly accessible network infrastructure.
 
+<img width="954" height="159" alt="W2-PM1-Task3-my result nslookup" src="https://github.com/user-attachments/assets/e8e6d0fa-668c-4362-9480-3e4a4bf468d0" />
+
 Next, I used **cURL with the `-I` option** to inspect the HTTP response headers returned by the web server. The response provided additional information about the web application and revealed the presence of the **WordPress REST API endpoint `/wp-json/`**. HTTP headers and publicly accessible endpoints can provide useful information during reconnaissance and may help identify technologies or interfaces that should be reviewed during subsequent security-testing phases.
+
+<img width="963" height="290" alt="W2-PM1-Task4-my result curl -I" src="https://github.com/user-attachments/assets/b06a340a-b98c-4471-a79e-cc85e66f0a51" />
+
 
 I also used **Wafw00f** to determine whether a **Web Application Firewall (WAF)** was present in front of the target website. The results identified **ModSecurity (SpiderLabs)** as the detected WAF technology. Identifying defensive technologies is an important part of reconnaissance because it helps a security assessor understand the protective controls implemented around the web application.
 
+<img width="713" height="331" alt="W2-PM1-Task5-my result wafw00f" src="https://github.com/user-attachments/assets/2472d9a3-9eb0-4161-b80c-4ff533cda94f" />
+
+
 Finally, I used **DNSRecon** to perform DNS enumeration and collect additional publicly accessible DNS information. The results included details related to **name servers, mail servers, SPF/TXT records, service records, and DNS software information**. This information contributes to a more complete understanding of the target’s DNS architecture and externally visible infrastructure.
 
+<img width="1022" height="515" alt="W2-PM1-Task6-my result dnsrecon -d" src="https://github.com/user-attachments/assets/4f008024-be3d-4cd6-bd65-b18933820010" />
+
 Overall, these reconnaissance activities provided a structured overview of the target’s **domain information, DNS configuration, web technologies, HTTP responses, publicly exposed endpoints, and security controls**. The collected information can serve as a foundation for the subsequent phases of an authorized penetration-testing assessment, particularly **scanning, enumeration, vulnerability assessment, and risk analysis**.
+
+
 
 ## 4.2 Network Scanning with Zenmap
 
@@ -118,6 +136,9 @@ After completing the host-discovery scan, I reviewed the results within Zenmap a
 This activity provided practical experience with **local network discovery, live-host identification, IP/MAC address analysis, and network-topology visualization** using Zenmap. It also demonstrated how network scanning can be used as an initial step in an authorized penetration-testing workflow to establish an understanding of the systems present within a defined network scope.
 
 > **Note:** The IP addresses, subnet, number of discovered hosts, MAC addresses, and topology shown in this section should reflect the **actual results obtained from my own authorized network during the assessment**. Any example values should be replaced with the corresponding evidence from the completed scan before final submission.
+
+<img width="1626" height="887" alt="W2-PM1-Task7-my result sudo zenmap" src="https://github.com/user-attachments/assets/f2ead234-9427-4229-9dc8-49c07e5ed522" />
+
 
  # 5. Risk Analysis / Impact
 
